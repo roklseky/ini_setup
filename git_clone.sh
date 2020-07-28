@@ -9,6 +9,8 @@ fi
 PTH=`eval echo ~$USER`
 HST=`hostname`
 mkdir $PTH/.ssh
+USR=$( echo ${PTH##/*/} )
+chown $USR:$USR $PTH/.ssh
 ssh-keygen -t ecdsa -b 521 -f $PTH/.ssh/id_$HST
 cat $PTH/.ssh/id_$HST.pub
 
