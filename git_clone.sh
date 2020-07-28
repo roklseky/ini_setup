@@ -1,11 +1,9 @@
 #!/bin/bash
 
 VENDOR=$(lscpu | grep 'Vendor ID' | awk '{print $3}')
-if [ "$VENDOR" = "GenuineIntel" ]
-
+if [ "$VENDOR" = "GenuineIntel" ] 
 then
-echo "Add yourself to SUDOERS -> sudo usermod -aG sudo '$(whoami)' [ENTER]"
-read continue
+sudo usermod -aG sudo "$(whoami)"
 fi
 
 PTH=`eval echo ~$USER`
