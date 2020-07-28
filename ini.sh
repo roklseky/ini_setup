@@ -7,8 +7,7 @@ VENDOR=$(lscpu | grep 'Vendor ID' | awk '{print $3}')
 if [ "$VENDOR" = "GenuineIntel" ]
 
 then
-su root
-sudo usermod -aG sudo "$(whoami)"
+read -p "Add yourself to SUDO -> sudo usermod -aG sudo "$(whoami)""
 
 read -p "Crontab config"
 # add to cron to resume after reboot
