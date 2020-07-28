@@ -31,8 +31,8 @@ echo IdentityFile $PTH/.ssh/id_$HST >> $PTH/.ssh/config
 echo IdentitiesOnly yes >> $PTH/.ssh/config
 
 #git clone git@github.com:roklseky/dockerfile.git
-echo "ssh-agent bash -c \
-'ssh-add $PTH/.ssh/id_$HST; git clone git@github.com:user/dockerfile.git'" \
+echo ssh-agent bash -c \
+'ssh-add $PTH/.ssh/id_$HST; git clone git@github.com:roklseky/dockerfile.git' \
 >$PTH/gitclone.sh
 
 sh $PTH/gitclone.sh
