@@ -4,7 +4,8 @@ VENDOR=$(lscpu | grep 'Vendor ID' | awk '{print $3}')
 if [ "$VENDOR" = "GenuineIntel" ]
 
 then
-read -p "Add yourself to SUDO sudo usermod -aG sudo '$(whoami)'" < /dev/tty
+echo "Add yourself to SUDOERS -> sudo usermod -aG sudo '$(whoami)' [ENTER]"
+read continue
 fi
 
 PTH=`eval echo ~$USER`
@@ -12,13 +13,13 @@ HST=`hostname`
 ssh-keygen -t ecdsa -b 521 -f $PTH/.ssh/id_$HST
 cat $PTH/.ssh/id_$HST.pub
 
-read -p "Add pub to github https://github.com/settings/keys for SSH git clone" < /dev/tty
+echo "Add pub to github https://github.com/settings/keys for SSH git clone. Press [ENTER] when done"
+read continue
 
 eval $(ssh-agent)
 ssh-add $PTH/.ssh/id_$HST
 git clone git@github.com:roklseky/dockerfile.git
 mv dockerfile/`hostname` $PTH/docker
 rm -rf dockerfile
-
 
 sh $PTH/docker/ini_install.sh
