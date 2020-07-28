@@ -4,7 +4,7 @@
 # sh ini.sh
 
 VENDOR=$(lscpu | grep 'Vendor ID' | awk '{print $3}')
-if [ $VENDOR -eq 'GenuineIntel' ]
+if [ $VENDOR == 'GenuineIntel' ]
 then
 su root
 sudo usermod -aG sudo "$(whoami)"
