@@ -25,7 +25,7 @@ echo HostName github.com >> $PTH/.ssh/config
 echo IdentityFile $PTH/.ssh/id_$HST >> $PTH/.ssh/config
 echo IdentitiesOnly yes >> $PTH/.ssh/config
 
-echo Host wdmycloud > $PTH/.ssh/config
+echo Host wdmycloud >> $PTH/.ssh/config
 echo HostName 10.0.0.122 >> $PTH/.ssh/config
 echo IdentityFile $PTH/.ssh/id_$HST >> $PTH/.ssh/config
 echo IdentitiesOnly yes >> $PTH/.ssh/config
