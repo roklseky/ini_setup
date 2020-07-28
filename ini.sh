@@ -5,7 +5,7 @@
 
 VENDOR=$(lscpu | grep 'Vendor ID' | awk '{print $3}')
 if $VENDOR=GenuineIntel
-
+then
 su root
 sudo usermod -aG sudo "$(whoami)"
 
@@ -23,7 +23,7 @@ echo ssh-add $PTH/.ssh/id_$HST >>nuc.sh
 echo git clone git@github.com:roklseky/dockerfile.git >>nuc.sh
 echo mv dockerfile/`hostname` docker >>nuc.sh
 echo rm -rf dockerfile >>nuc.sh
-echo docker/ini_install.sh
+echo docker/ini_install.sh >>nuc.sh
 
 # add to cron to resume after reboot
 sudo systemctl enable cron.service
