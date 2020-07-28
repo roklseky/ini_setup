@@ -19,10 +19,18 @@ cat $PTH/.ssh/id_$HST.pub
 echo "Add pub to github https://github.com/settings/keys for SSH git clone. Press [ENTER] when done"
 read continue
 
-echo HostName github.com > $PTH/.ssh/config
-echo HostName 10.0.0.222 >> $PTH/.ssh/config
+echo Host github > $PTH/.ssh/config
+echo HostName github.com >> $PTH/.ssh/config
 echo IdentityFile $PTH/.ssh/id_$HST >> $PTH/.ssh/config
-git clone git@github.com:roklseky/dockerfile.git
+echo IdentitiesOnly yes >> $PTH/.ssh/config
+
+echo Host wdmycloud > $PTH/.ssh/config
+echo HostName 10.0.0.122 >> $PTH/.ssh/config
+echo IdentityFile $PTH/.ssh/id_$HST >> $PTH/.ssh/config
+echo IdentitiesOnly yes >> $PTH/.ssh/config
+
+#git clone git@github.com:roklseky/dockerfile.git
+ssh-agent bash -c 'ssh-add $PTH/.ssh/id_$HST.pub; git clone git@github.com:user/dockerfile.git'
 mv dockerfile/`hostname` $PTH/docker
 rm -rf dockerfile
 
