@@ -8,12 +8,13 @@ DVC=NUC
 PTH=`eval echo ~$USER`
 USR=$( echo ${PTH##/*/} )
 sudo usermod -aG sudo $USR
-fi
+else
 DVC=pi
 PTH=`eval echo ~$USER`
 HST=`hostname`
 mkdir $PTH/.ssh
 USR=$( echo ${PTH##/*/} )
+fi
 
 # Generate SSH keys
 ssh-keygen -t ecdsa -b 521 -f $PTH/.ssh/id_$HST
@@ -32,6 +33,13 @@ ssh-add $PTH/.ssh/id_$HST;
 git clone git@github.com:roklseky/dockerfile.git
 
 #Discover if pi of NUC
+VENDOR=$(lscpu | grep 'Vendor ID' | awk '{print $3}')
+if [ "$VENDOR" = "GenuineIntel" ] 
+then
+DVC=NUC
+else
+DVC=pi
+fi
 
 if [ "$DVC" = "NUC" ] 
 then
