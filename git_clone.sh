@@ -34,7 +34,7 @@ git clone git@github.com:roklseky/dockerfile.git
 #Discover if pi of NUC
 mv dockerfile/ini_install_NUC.sh $PTH/ini_install_NUC.sh
 mv dockerfile/ini_install_pi.sh $PTH/ini_install_pi.sh
-mv dockerfile/ini_reboot_install_pi.sh $PTH/dockerfile/ini_reboot_install_pi.sh
+mv dockerfile/ini_reboot_install_pi.sh $PTH/ini_reboot_install_pi.sh
 mv dockerfile/pisn.txt $PTH/pisn.txt
 if [ "$DVC" = "NUC" ] 
 then
