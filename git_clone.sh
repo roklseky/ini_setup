@@ -59,6 +59,6 @@ mv dockerfile/pisn.txt $PTH/pisn.txt
 echo "$(tput setaf 1)$(tput setab 7)\
 "It is pi "->" going to execute "sh $PTH/ini_install_pi.sh" \
 Press [ENTER] to continue"$(tput sgr 0)"
-sh $PTH/ini_install_pi.sh
 read continue
+sh $PTH/ini_install_pi.sh
 fi
