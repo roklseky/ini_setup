@@ -25,7 +25,6 @@ echo "$(tput setaf 1)$(tput setab 7)\
 "Add pub key to github "->" https://github.com/settings/keys for SSH git clone. \
 Press [ENTER] when done"$(tput sgr 0)"
 read continue
-echo yes
 
 # Clone personal git repo
 eval $(ssh-agent)
@@ -39,7 +38,15 @@ mv $PTH/dockerfile/ini_reboot_install_pi.sh $PTH/dockerfile/ini_reboot_install_p
 mv $PTH/dockerfile/pisn.txt $PTH/pisn.txt
 if [ "$DVC" = "NUC" ] 
 then
+echo "$(tput setaf 1)$(tput setab 7)\
+"It is NUC "->" going to execute "sh $PTH/ini_install_NUC.sh" \
+Press [ENTER] to continue"$(tput sgr 0)"
+read continue
 sh $PTH/ini_install_NUC.sh
 else
+echo "$(tput setaf 1)$(tput setab 7)\
+"It is pi "->" going to execute "sh $PTH/ini_install_pi.sh" \
+Press [ENTER] to continue"$(tput sgr 0)"
 sh $PTH/ini_install_pi.sh
+read continue
 fi
