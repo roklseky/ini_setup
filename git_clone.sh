@@ -32,10 +32,10 @@ ssh-add $PTH/.ssh/id_$HST;
 git clone git@github.com:roklseky/dockerfile.git
 
 #Discover if pi of NUC
-mv $PTH/dockerfile/ini_install_NUC.sh $PTH/ini_install_NUC.sh
-mv $PTH/dockerfile/ini_install_pi.sh $PTH/ini_install_pi.sh
-mv $PTH/dockerfile/ini_reboot_install_pi.sh $PTH/dockerfile/ini_reboot_install_pi.sh
-mv $PTH/dockerfile/pisn.txt $PTH/pisn.txt
+mv dockerfile/ini_install_NUC.sh $PTH/ini_install_NUC.sh
+mv dockerfile/ini_install_pi.sh $PTH/ini_install_pi.sh
+mv dockerfile/ini_reboot_install_pi.sh $PTH/dockerfile/ini_reboot_install_pi.sh
+mv dockerfile/pisn.txt $PTH/pisn.txt
 if [ "$DVC" = "NUC" ] 
 then
 echo "$(tput setaf 1)$(tput setab 7)\
