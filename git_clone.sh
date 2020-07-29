@@ -17,8 +17,11 @@ ssh-keygen -t ecdsa -b 521 -f $PTH/.ssh/id_$HST
 chown -R $USR:$USR $PTH/.ssh
 cat $PTH/.ssh/id_$HST.pub
 
-echo "Add pub to github https://github.com/settings/keys for SSH git clone. Press [ENTER] when done"
+echo "$(tput setaf 1)$(tput setab 7)\
+"Add pub key to github "->" https://github.com/settings/keys for SSH git clone. \
+Press [ENTER] when done"$(tput sgr 0)"
 read continue
+echo yes
 
 #echo Host github > $PTH/.ssh/config
 #echo HostName github.com >> $PTH/.ssh/config
