@@ -12,12 +12,12 @@ sudo usermod -aG sudo $USR
 else
 DVC=pi
 PTH=`eval echo ~$USER`
-HST=`hostname`
 mkdir $PTH/.ssh
 USR=$( echo ${PTH##/*/} )
 fi
 
 # Generate SSH keys
+HST=`hostname`
 ssh-keygen -t ecdsa -b 521 -f $PTH/.ssh/id_$HST
 chown -R $USR:$USR $PTH/.ssh
 cat $PTH/.ssh/id_$HST.pub
