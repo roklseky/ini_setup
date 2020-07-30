@@ -43,6 +43,7 @@ else
 DVC=pi
 fi
 
+#it is NUC
 if [ "$DVC" = "NUC" ] 
 then
 mv dockerfile/ini_install_NUC.sh $PTH/ini_install_NUC.sh
@@ -53,6 +54,7 @@ Press [ENTER] to continue"$(tput sgr 0)"
 read continue
 sh $PTH/ini_install_NUC.sh
 
+#it is pi
 else
 mv dockerfile/ini_install_pi.sh $PTH/ini_install_pi.sh
 mv dockerfile/ini_reboot_install_pi.sh $PTH/ini_reboot_install_pi.sh
