@@ -18,6 +18,7 @@ fi
 
 # Generate SSH keys
 HST=`hostname`
+mkdir $PTH/.ssh
 ssh-keygen -t ecdsa -b 521 -f $PTH/.ssh/id_$HST
 chown -R $USR:$USR $PTH/.ssh
 cat $PTH/.ssh/id_$HST.pub
