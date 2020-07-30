@@ -34,7 +34,7 @@ eval $(ssh-agent)
 ssh-add $PTH/.ssh/id_$HST; 
 git clone git@github.com:roklseky/dockerfile.git
 
-#Discover if pi of NUC
+#Discover if pi or NUC
 VENDOR=$(lscpu | grep 'Vendor ID' | awk '{print $3}')
 if [ "$VENDOR" = "GenuineIntel" ] 
 then
