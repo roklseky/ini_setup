@@ -12,7 +12,6 @@ sudo usermod -aG sudo $USR
 else
 DVC=pi
 PTH=`eval echo ~$USER`
-rm -rf /home/pi/*
 mkdir $PTH/.ssh
 USR=$( echo ${PTH##/*/} )
 fi
