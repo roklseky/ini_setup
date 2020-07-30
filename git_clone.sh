@@ -1,5 +1,6 @@
 #!/bin/bash
 # git clone https://github.com/roklseky/ini_setup.git
+# run as root (su root)
 
 VENDOR=$(lscpu | grep 'Vendor ID' | awk '{print $3}')
 if [ "$VENDOR" = "GenuineIntel" ] 
