@@ -1,6 +1,18 @@
 #!/bin/bash
 # git clone https://github.com/roklseky/ini_setup.git
-# run as root (su root)
+# run as root (su root or sudo su)
+
+#WIFI boot config
+#wpa_supplicant.conf
+
+#ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+#update_config=1
+#country=CZ                                            
+
+#network={
+# ssid=""
+# psk=""
+#}
 
 VENDOR=$(lscpu | grep 'Vendor ID' | awk '{print $3}')
 if [ "$VENDOR" = "GenuineIntel" ] 
