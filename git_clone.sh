@@ -1,6 +1,6 @@
 #!/bin/bash
 # git clone https://github.com/roklseky/ini_setup.git
-# run as root (su root or sudo su)
+# run as root on NUC (as pi on pi)
 
 #WIFI boot config
 #wpa_supplicant.conf
